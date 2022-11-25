@@ -8,6 +8,8 @@
 
 ### Um projeto que implementa as principais funcionalidades de um app de encontros.
 
+[Link do projeto](https://meetdev.onrender.com/)
+
 ### Features
 
 - [x] Cadastro de usuário
@@ -30,3 +32,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### Para rodar o projeto
 
 `set HTTPS=true&&npm start`
+
+### Autor
+
+Rian Da Costa Lima
+
+[LinkedIn](https://www.linkedin.com/in/rian-lima-558799227/)
+[github.com](https://github.com/RianLima29/)
