@@ -1,6 +1,6 @@
-#Tindev
+# Tindev
 
-###Um projeto em React que implementa as principais funcionalidades de um app de encontros.
+### Um projeto em React que implementa as principais funcionalidades de um app de encontros.
 
 # Getting Started with Create React App
 
