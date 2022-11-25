@@ -1,3 +1,7 @@
+# Tindev
+
+### Um projeto em React que implementa as principais funcionalidades de um app de encontros.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
