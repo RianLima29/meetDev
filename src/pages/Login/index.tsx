@@ -42,6 +42,7 @@ export default function Login() {
           backgroundColor={COLOR_PRIMARY_VARIANT}
         />
       </C.RightContainer>
+      <C.Credits>Feito com ♡ por Rian Lima</C.Credits>
     </C.Container>
   );
 }

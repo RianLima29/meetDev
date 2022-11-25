@@ -60,3 +60,13 @@ export const Container = styled.div`
   justify-content: center;
   padding: 10px;
 `;
+
+export const Credits = styled.p`
+    color: ${COLOR_TEXT};
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 11px;
+    font-weight: 200;
+`
