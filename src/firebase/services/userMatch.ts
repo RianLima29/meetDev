@@ -19,6 +19,7 @@ export const userMatch = {
       addDoc(collection(db, "/chats/"), {
         participants: [userUid, remoteUid],
         messages: [],
+        unreadMessages: {}
       }).then((snap) => {
         setDoc(
           doc(db, "/usersData/", userUid),
