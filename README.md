@@ -3,7 +3,7 @@
 </h1>
 
 <h1 align="center"> 
-	🚧  mettDev 🚀 Em construção...  🚧
+	🚧  meetDev 🚀 Em construção...  🚧
 </h1>
 
 ### Um projeto que implementa as principais funcionalidades de um app de encontros.
