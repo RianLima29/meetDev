@@ -1,4 +1,4 @@
-import { collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "..";
 
@@ -29,7 +29,7 @@ export const userProfile = {
           likedBy: [],
           unlikes: [],
           unlikedBy: [],
-          chatsWith: {}
+          chatsWith: {},
         },
       },
       {

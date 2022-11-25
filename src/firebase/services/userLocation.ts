@@ -1,6 +1,5 @@
-import { doc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import { Dispatch } from "redux";
 import { db } from "..";
 
 export const userLocation = {

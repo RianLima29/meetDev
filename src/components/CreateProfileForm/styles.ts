@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { COLOR_ACCENT, COLOR_BG, COLOR_ERROR, COLOR_PRIMARY, COLOR_TEXT } from "../../config";
+import { COLOR_ACCENT, COLOR_BG, COLOR_ERROR, COLOR_TEXT } from "../../config";
 
 export const Title = styled.h3`
-
-    color: ${COLOR_TEXT};
-
-`
+  color: ${COLOR_TEXT};
+`;
 
 export const Container = styled.div`
   width: 40vw;
@@ -29,10 +27,9 @@ export const Input = styled.input`
   border-bottom: 1px solid ${COLOR_ACCENT};
   padding: 5px;
   color: ${COLOR_TEXT};
-    margin: 10px 0 10px 0;
- 
+  margin: 10px 0 10px 0;
 
-  &:focus{
+  &:focus {
     border-bottom: 2px solid ${COLOR_ACCENT};
   }
 `;
@@ -60,6 +57,6 @@ export const Option = styled.option`
 `;
 
 export const errorLabel = styled.p`
-    color: ${COLOR_ERROR};
-    font-size: 12px;
-`
+  color: ${COLOR_ERROR};
+  font-size: 12px;
+`;

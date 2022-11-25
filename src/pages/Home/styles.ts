@@ -23,9 +23,9 @@ export const LinkTo = styled(Link)`
   border-bottom: 1px solid ${COLOR_ACCENT};
   text-decoration: none;
   color: ${COLOR_TEXT};
-  transition: .5s;
+  transition: 0.5s;
 
-  &:hover{
+  &:hover {
     color: ${COLOR_ACCENT};
   }
 `;
@@ -47,7 +47,7 @@ export const SwipeCardContainer = styled.div`
   width: fit-content;
   max-width: 350px;
   min-width: 350px;
-  height: 80vh;
+  height: 100%;
   position: relative;
   @media (max-width: ${MOBILE_WIDTH}) {
     height: 60vh;

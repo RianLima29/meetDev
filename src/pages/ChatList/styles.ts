@@ -26,8 +26,5 @@ export const MainContainer = styled.div`
 `;
 
 export const NoMatchs = styled.p`
-
   color: ${COLOR_ACCENT};
-
-`
-
+`;

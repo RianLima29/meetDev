@@ -16,7 +16,7 @@ export const SwipeCardButton = styled.button<Props>`
   justify-content: center;
   color: white;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-  transition: .2s;
+  transition: 0.2s;
   cursor: pointer;
 
   & > svg {

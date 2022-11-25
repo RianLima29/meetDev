@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 import { BsGoogle } from "react-icons/bs";
 import Logo from "../../components/Logo";
 import { auth } from "../../firebase";
-import { useSignInWithGoogle, useAuthState } from "react-firebase-hooks/auth";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { COLOR_PRIMARY_VARIANT } from "../../config";

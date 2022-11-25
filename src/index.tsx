@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalStyles } from "./GlobalStyles";
@@ -17,11 +16,14 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <App />
-        <ToastContainer position="bottom-right" limit={1} style={{zIndex:100000000000}} theme="dark"/>
+        <ToastContainer
+          position="bottom-right"
+          limit={1}
+          style={{ zIndex: 100000000000 }}
+          theme="dark"
+        />
         <GlobalStyles />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
-
-

@@ -4,14 +4,12 @@ import { useDispatch } from "react-redux";
 import { setBlocked } from "../../redux/slices/overlaySlice";
 import {
   useCollectionData,
-  useCollectionDataOnce,
   useDocumentData,
 } from "react-firebase-hooks/firestore";
 import {
   collection,
   doc,
   DocumentData,
-  limit,
   query,
   where,
 } from "firebase/firestore";
@@ -23,16 +21,15 @@ import { UserType } from "../../firebase/types/userTypes";
 import { userMatch } from "../../firebase/services/userMatch";
 import { geoDistance } from "../../firebase/helpers/geoDistance";
 import Footer from "../../components/Footer";
-import { toast } from "react-toastify";
 
 export default function Home() {
   let userPreferenceGender =
     localStorage.getItem("preferenceGender") == "MF"
       ? false
       : localStorage.getItem("preferenceGender");
-  if (userPreferenceGender != false) {
+  if (userPreferenceGender != false)
     userPreferenceGender = userPreferenceGender == "F" ? "M" : "F";
-  }
+
   const dispatch = useDispatch();
   const uid = localStorage.getItem("user_id") ?? "...";
   const [userData, loading, error] = useDocumentData(

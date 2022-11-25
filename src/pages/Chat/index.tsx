@@ -2,7 +2,6 @@ import React from "react";
 import * as C from "./styles";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
-import { BiCheck, BiCheckDouble } from "react-icons/bi";
 import { useDocumentData } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -36,6 +35,11 @@ export default function Chat() {
   const [unseenMessages, setUnseenMessages] = React.useState<boolean>(true);
   const [chatData] = useDocumentData(doc(db, "/chats/" + chatId));
 
+  const onSubmit = (data: Form) => {
+    console.log(chatData);
+    sendMessages.send(userId, remoteUid, data.message, chatId);
+  };
+
   React.useEffect(() => {
     if (!remoteUid && chatData?.participants) {
       let id = chatData?.participants.filter((item: string) => {
@@ -55,11 +59,6 @@ export default function Chat() {
       setUnseenMessages(false);
     }
   }, [chatData]);
-
-  const onSubmit = (data: Form) => {
-    console.log(chatData);
-    sendMessages.send(userId, remoteUid, data.message, chatId);
-  };
 
   const content = messages?.map((message, index) => {
     let fromUser = message.from == userId ? true : false;

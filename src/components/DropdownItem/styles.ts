@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { COLOR_ACCENT, COLOR_BG, COLOR_PRIMARY, COLOR_PRIMARY_VARIANT, COLOR_TEXT } from "../../config";
+import {
+  COLOR_ACCENT,
+  COLOR_BG,
+  COLOR_PRIMARY,
+  COLOR_PRIMARY_VARIANT,
+  COLOR_TEXT,
+} from "../../config";
 
 export const DropdownItem = styled.div`
   width: 150px;

@@ -21,11 +21,12 @@ export default function ChatList() {
     )
   );
 
-
   console.log(matchs);
   const chatItems = matchs?.map((user, index) => (
     <ChatItem
-      redirectTo={'/chat/'+(user as UserType).profile.chatsWith[userId].chatId}
+      redirectTo={
+        "/chat/" + (user as UserType).profile.chatsWith[userId].chatId
+      }
       photoUrl={(user as UserType).profile.photoUrl}
       age={(user as UserType).profile.age}
       profileName={(user as UserType).profile.name}

@@ -1,4 +1,4 @@
-import { arrayUnion, doc, setDoc, writeBatch } from "firebase/firestore";
+import { arrayUnion, doc, setDoc } from "firebase/firestore";
 import { db } from "..";
 
 export const sendMessages = {
@@ -21,12 +21,16 @@ export const sendMessages = {
     );
   },
   markAsRead: (uid: string, chatId: string) => {
-    setDoc(doc(db, "/chats/" + chatId), {
-        unreadMessages:{
-            [uid]: false
-        }
-    },{
-        merge:true
-    });
+    setDoc(
+      doc(db, "/chats/" + chatId),
+      {
+        unreadMessages: {
+          [uid]: false,
+        },
+      },
+      {
+        merge: true,
+      }
+    );
   },
 };

@@ -6,13 +6,13 @@ interface Props {
   photoUrl: string;
   profileName: string;
   age: number;
-  redirectTo: string
+  redirectTo: string;
 }
 
 export default function ChatItem(props: Props) {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <C.Container onClick={()=>navigate(props.redirectTo)}>
+    <C.Container onClick={() => navigate(props.redirectTo)}>
       <C.ProfilePic photoUrl={props.photoUrl} />
       <C.userInfoWrapper>
         <C.ProfileName>{props.profileName}</C.ProfileName>

@@ -21,9 +21,12 @@ export const Button = styled.button<PropsButton>`
   margin: 20px auto;
   height: ${(props) => props.height ?? "50px"};
   border-radius: ${(props) => props.radius ?? "20px"};
-  background-color: ${(props) => props.noBackgroundColor ? 'transparent' : props.backgroundColor ?? COLOR_PRIMARY_VARIANT};
+  background-color: ${(props) =>
+    props.noBackgroundColor
+      ? "transparent"
+      : props.backgroundColor ?? COLOR_PRIMARY_VARIANT};
   color: ${(props) => props.color ?? COLOR_TEXT};
-  border: 2px solid ${props => props.backgroundColor};
+  border: 2px solid ${(props) => props.backgroundColor};
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
@@ -31,7 +34,7 @@ export const Button = styled.button<PropsButton>`
   &:hover {
     background-color: ${(props) => props.color ?? "transparent"};
     color: ${(props) => props.backgroundColor ?? COLOR_TEXT};
-    border: 2px solid ${props => props.backgroundColor};
+    border: 2px solid ${(props) => props.backgroundColor};
   }
 
   & p {

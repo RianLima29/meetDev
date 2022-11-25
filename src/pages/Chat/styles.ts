@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { COLOR_ACCENT, COLOR_DARK, COLOR_TEXT } from "../../config";
-import { IoSendSharp } from 'react-icons/io5'
 
 export const Container = styled.div`
   width: 100vw;
@@ -48,78 +47,70 @@ export const SendMessageInput = styled.input`
 `;
 
 export const SendMessageButton = styled.button`
+  color: ${COLOR_ACCENT};
+  width: 80px;
+  height: 100%;
+  border: 2px solid ${COLOR_ACCENT};
+  border-left: 1px solid ${COLOR_ACCENT};
+  border-radius: 1px 20px 20px 0;
+  transition: 0.5;
+  cursor: pointer;
+  padding: 5px;
+  background-color: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    color: ${COLOR_ACCENT};
-    width: 80px;
-    height: 100%;
-    border: 2px solid ${COLOR_ACCENT};
-    border-left: 1px solid ${COLOR_ACCENT};
-    border-radius: 1px 20px 20px 0;
-    transition: .5;
-    cursor: pointer;
-    padding: 5px;
-    background-color: transparent;
-    outline: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  & > svg {
+    font-size: 20px;
+  }
 
-    & > svg{
-        font-size: 20px;
-    }
-
-    &:hover{
-        color: ${COLOR_TEXT};
-    }
-
-`
+  &:hover {
+    color: ${COLOR_TEXT};
+  }
+`;
 
 interface MessageProps {
-    fromUser:boolean
+  fromUser: boolean;
 }
 
 export const Message = styled.div<MessageProps>`
-
-    border: 2px solid ${COLOR_ACCENT};
-    background-color: ${COLOR_DARK};
-    min-width: 100px;
-    width: fit-content;
-    height: fit-content;
-    z-index: 1000;
-    align-self: ${props => props.fromUser ? 'flex-end' : 'start'};
-    border-radius: 10px;
-    color: ${COLOR_TEXT};
-    max-width: 49%;
-    padding: 8px;
-    word-wrap: break-word;
-    word-break: break-all;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-
-`
+  border: 2px solid ${COLOR_ACCENT};
+  background-color: ${COLOR_DARK};
+  min-width: 100px;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1000;
+  align-self: ${(props) => (props.fromUser ? "flex-end" : "start")};
+  border-radius: 10px;
+  color: ${COLOR_TEXT};
+  max-width: 49%;
+  padding: 8px;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+`;
 
 export const MessageText = styled.p`
-
-    font-weight: 300;
-    font-size: 14px;
-
-`
+  font-weight: 300;
+  font-size: 14px;
+`;
 
 export const MessageInfoWrapper = styled.div`
-   
-    justify-self: flex-end;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    height: fit-content;
-`
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: fit-content;
+`;
 
 export const SeenText = styled.p`
-    color: #ccc;
-    align-self: flex-end;
-    margin-top: 5px;
-    font-size: 10px;
-
-`
+  color: #ccc;
+  align-self: flex-end;
+  margin-top: 5px;
+  font-size: 10px;
+`;

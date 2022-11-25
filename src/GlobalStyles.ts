@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { COLOR_ACCENT, COLOR_BG, COLOR_DARK, COLOR_PRIMARY, COLOR_TEXT } from "./config";
+import { COLOR_BG, COLOR_DARK } from "./config";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -25,4 +25,4 @@ export const GlobalStyles = createGlobalStyle`
     }
 
 
-`
+`;
