@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="meetDev" title="meetDev" src="https://i.ibb.co/cCM5mSb/meet-Dev-Homepage.jpg" />
+  <img alt="meetDev" title="meetDev" src="https://i.ibb.co/txkfdTZ/meet-Dev-Homepage.jpg" />
 </h1>
 
 <h1 align="center"> 
