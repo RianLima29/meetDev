@@ -53,7 +53,7 @@ export default function Chat() {
       sendMessages.markAsRead(userId, chatId);
     }
 
-    if (chatData?.unreadMessages[remoteUid]) {
+    if (chatData?.unreadMessages[remoteUid ?? '...']) {
       setUnseenMessages(true);
     } else {
       setUnseenMessages(false);
