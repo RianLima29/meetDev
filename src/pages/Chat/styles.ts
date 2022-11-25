@@ -115,3 +115,11 @@ export const MessageInfoWrapper = styled.div`
     width: 100%;
     height: fit-content;
 `
+
+export const SeenText = styled.p`
+    color: #ccc;
+    align-self: flex-end;
+    margin-top: 5px;
+    font-size: 10px;
+
+`
