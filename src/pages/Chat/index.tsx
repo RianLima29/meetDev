@@ -22,7 +22,7 @@ const schema = yup.object().shape({
 
 export default function Chat() {
   const params = useParams();
-  const { register, handleSubmit } = useForm<Form>({
+  const { register, handleSubmit, reset } = useForm<Form>({
     resolver: yupResolver(schema),
   });
   const chatId = params.chatId ?? "...";
@@ -32,13 +32,20 @@ export default function Chat() {
   );
   const [remoteUid, setRemoteUid] = React.useState<string>("...");
   const formRef = React.useRef() as React.RefObject<HTMLFormElement>;
+  const containerRef = React.useRef() as React.RefObject<HTMLDivElement>;
   const [unseenMessages, setUnseenMessages] = React.useState<boolean>(true);
   const [chatData] = useDocumentData(doc(db, "/chats/" + chatId));
 
   const onSubmit = (data: Form) => {
-    console.log(chatData);
     sendMessages.send(userId, remoteUid, data.message, chatId);
+    reset();
   };
+
+  React.useEffect(()=>{
+    if (containerRef.current?.scrollHeight){
+      containerRef.current.scrollTop = containerRef.current?.scrollHeight
+   }
+  },[messages])
 
   React.useEffect(() => {
     if (!remoteUid && chatData?.participants) {
@@ -48,12 +55,11 @@ export default function Chat() {
       setRemoteUid(id);
     }
     if (chatData?.messages) {
-      console.log(chatData);
       setMessages(chatData?.messages);
       sendMessages.markAsRead(userId, chatId);
     }
 
-    if (chatData?.unreadMessages[remoteUid ?? '...']) {
+    if (chatData?.unreadMessages[remoteUid ?? "..."]) {
       setUnseenMessages(true);
     } else {
       setUnseenMessages(false);
@@ -74,12 +80,12 @@ export default function Chat() {
   return (
     <C.Container>
       <Header />
-      <C.MessagesContainer>
+      <C.MessagesContainer ref={containerRef}>
         {content && content}
         {!unseenMessages && <C.SeenText>Visto</C.SeenText>}
       </C.MessagesContainer>
       <C.SendMessageForm ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-        <C.SendMessageInput {...register("message")} />
+        <C.SendMessageInput autoComplete="off" {...register("message")} />
         <C.SendMessageButton>
           <IoSendSharp />
         </C.SendMessageButton>

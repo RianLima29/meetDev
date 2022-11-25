@@ -13,6 +13,7 @@ export const sendMessages = {
           to: toUid,
           from: fromUid,
           body,
+          id: Math.random()
         }),
       },
       {

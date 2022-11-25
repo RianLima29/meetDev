@@ -8,4 +8,5 @@ export type Message = {
   to: string;
   seen: boolean;
   body: string;
+  id: number
 };
