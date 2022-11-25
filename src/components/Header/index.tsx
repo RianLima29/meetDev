@@ -28,14 +28,14 @@ export default function Header(props: Props) {
     signOut().then(async () => {
       userPresence.setOffline(alreadyAuthUser?.uid);
       dispatch(setUser(null));
-      localStorage.clear()
+      localStorage.clear();
       navigate("/");
     });
   };
 
   return (
     <C.Container>
-      <Logo redirectTo="/"/>
+      <Logo redirectTo="/" />
       <C.HeaderTitle>{props.title}</C.HeaderTitle>
       <C.PhotoContainer
         onClick={() => setDropdown(!dropdown)}

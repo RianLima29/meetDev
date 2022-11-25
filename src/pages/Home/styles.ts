@@ -23,6 +23,11 @@ export const LinkTo = styled(Link)`
   border-bottom: 1px solid ${COLOR_ACCENT};
   text-decoration: none;
   color: ${COLOR_TEXT};
+  transition: .5s;
+
+  &:hover{
+    color: ${COLOR_ACCENT};
+  }
 `;
 
 export const MainContainer = styled.div`

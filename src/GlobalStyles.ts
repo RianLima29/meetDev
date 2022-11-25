@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { COLOR_BG, COLOR_TEXT } from "./config";
+import { COLOR_ACCENT, COLOR_BG, COLOR_DARK, COLOR_PRIMARY, COLOR_TEXT } from "./config";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -8,6 +8,16 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
         font-family: 'Inter', sans-serif;
+
+        &::-webkit-scrollbar{
+            background-color:${COLOR_DARK};
+            width: 10px;
+            padding: 5px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: #c9c9c9c9;
+            border-radius: 10px;
+        }
     }
     body{
         background-color: ${COLOR_BG};

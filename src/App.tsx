@@ -10,15 +10,13 @@ import userPresence from "./firebase/services/userPresence";
 export default function App() {
   let [alreadyAuthUser, loading, error] = useAuthState(auth);
 
-  
-
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     if (alreadyAuthUser?.uid) {
       userPresence.setOnline(alreadyAuthUser.uid);
       dispatch(setUser(alreadyAuthUser));
-      localStorage.setItem('user_id', alreadyAuthUser.uid);
+      localStorage.setItem("user_id", alreadyAuthUser.uid);
     } else {
       dispatch(setUser(null));
     }
@@ -39,6 +37,6 @@ export default function App() {
   if (error) {
     return <></>;
   } else {
-    return (!!alreadyAuthUser ? <PrivateRoutes /> : <PublicRoutes />);
+    return !!alreadyAuthUser ? <PrivateRoutes /> : <PublicRoutes />;
   }
 }

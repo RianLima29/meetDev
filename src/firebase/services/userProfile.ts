@@ -29,6 +29,7 @@ export const userProfile = {
           likedBy: [],
           unlikes: [],
           unlikedBy: [],
+          chatsWith: {}
         },
       },
       {

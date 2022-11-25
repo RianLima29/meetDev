@@ -16,6 +16,7 @@ interface DropdownProps {
   }
   
   export const Dropdown = styled.div<DropdownProps>`
+
     min-width: 100px;
     min-height: 30px;
     width: fit-content;

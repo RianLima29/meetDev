@@ -22,6 +22,8 @@ import SwipeCard from "../../components/SwipeCard";
 import { UserType } from "../../firebase/types/userTypes";
 import { userMatch } from "../../firebase/services/userMatch";
 import { geoDistance } from "../../firebase/helpers/geoDistance";
+import Footer from "../../components/Footer";
+import { toast } from "react-toastify";
 
 export default function Home() {
   let userPreferenceGender =
@@ -33,7 +35,9 @@ export default function Home() {
   }
   const dispatch = useDispatch();
   const uid = localStorage.getItem("user_id") ?? "...";
-  const [userData] = useDocumentData(doc(db, "/usersData/", uid));
+  const [userData, loading, error] = useDocumentData(
+    doc(db, "/usersData/", uid)
+  );
   let [othersData] = useCollectionData(
     query(
       collection(db, "/usersData"),
@@ -53,6 +57,7 @@ export default function Home() {
 
     return (
       <SwipeCard
+        key={index}
         zIndex={index}
         isOnline={(user as UserType).online}
         photoUrl={(user as UserType).profile.photoUrl}
@@ -80,7 +85,6 @@ export default function Home() {
   React.useEffect(() => {
     let filteredData =
       othersData?.filter((user, index) => {
-        console.log((user as UserType).profile.likedBy.includes(uid));
         return (
           (user as UserType).profile.uid != uid &&
           !(user as UserType).profile.likedBy.includes(uid) &&
@@ -122,6 +126,7 @@ export default function Home() {
     <C.Container>
       <Header title="Home" />
       <C.MainContainer>
+        {loading && <C.Text>Carregando</C.Text>}
         {!userData?.profile && (
           <>
             <C.Text>Você precisa de um perfil, para criar um</C.Text>
@@ -136,12 +141,15 @@ export default function Home() {
                 <C.Text>
                   Acabaram os usuários compatíveis com a sua preferência
                 </C.Text>
-                <C.LinkTo to={"/create-profile"}>tente reconfigurar seu perfil</C.LinkTo>
+                <C.LinkTo to={"/create-profile"}>
+                  tente reconfigurar seu perfil
+                </C.LinkTo>
               </>
             )}
           </C.SwipeCardContainer>
         )}
       </C.MainContainer>
+      <Footer />
     </C.Container>
   );
 }

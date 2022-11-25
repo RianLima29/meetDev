@@ -17,7 +17,7 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <App />
-        <ToastContainer position="bottom-right" limit={1} theme="dark"/>
+        <ToastContainer position="bottom-right" limit={1} style={{zIndex:100000000000}} theme="dark"/>
         <GlobalStyles />
       </Provider>
     </BrowserRouter>

@@ -13,5 +13,10 @@ export type UserType = {
         unlikedBy: string[]
         likes: string[]
         likedBy: string[]
+        chatsWith: {
+            [key:string]:{
+                chatId:string
+            } 
+        }
     }
 }
